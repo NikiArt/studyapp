@@ -7,6 +7,7 @@ import java.util.UUID;
 public class User implements PersonModel {
     private String name;
     private String id;
+    private Boolean active;
 
     public User(String name) {
         this.name = name;
@@ -20,6 +21,16 @@ public class User implements PersonModel {
 
     public String getName() {
         return name;
+    }
+
+    public void setActive() {
+        this.active = true;
+        System.out.println(name + " переведен в статус 'Активный'");
+    }
+
+    public void setNotActive() {
+        this.active = false;
+        System.out.println(name + " переведен в статус 'В архиве'");
     }
 
     @Override
