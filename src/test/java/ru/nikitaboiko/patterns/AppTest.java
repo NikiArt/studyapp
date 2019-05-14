@@ -1,6 +1,10 @@
 package ru.nikitaboiko.patterns;
 
 import org.junit.Test;
+import ru.nikitaboiko.patterns.commandPattern.ChangeActive;
+import ru.nikitaboiko.patterns.commandPattern.ChangeDeactive;
+import ru.nikitaboiko.patterns.commandPattern.Changer;
+import ru.nikitaboiko.patterns.commandPattern.Command;
 import ru.nikitaboiko.patterns.users.Group;
 import ru.nikitaboiko.patterns.users.User;
 
@@ -25,5 +29,13 @@ public class AppTest {
         group.addToDb();
         usrTwo.printOn();
         group.printOn();
+
+        Command changeActive = new ChangeActive(usrOne);
+        Command changeDeactive = new ChangeDeactive(usrOne);
+
+        Changer userOneActivity = new Changer(changeActive, changeDeactive);
+
+        userOneActivity.activate();
+        userOneActivity.deactivate();
     }
 }
