@@ -12,6 +12,7 @@ public class User implements PersonModel {
     public User(String name) {
         this.name = name;
         this.id = UUID.randomUUID().toString();
+        this.active = false;
     }
 
     public User(String name, String id) {
@@ -21,6 +22,14 @@ public class User implements PersonModel {
 
     public String getName() {
         return name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Boolean getStatus() {
+        return active;
     }
 
     public void setActive() {

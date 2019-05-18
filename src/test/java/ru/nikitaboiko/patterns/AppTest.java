@@ -5,6 +5,7 @@ import ru.nikitaboiko.patterns.commandPattern.ChangeActive;
 import ru.nikitaboiko.patterns.commandPattern.ChangeDeactive;
 import ru.nikitaboiko.patterns.commandPattern.Changer;
 import ru.nikitaboiko.patterns.commandPattern.Command;
+import ru.nikitaboiko.patterns.database.DataControl;
 import ru.nikitaboiko.patterns.users.Group;
 import ru.nikitaboiko.patterns.users.User;
 
@@ -38,4 +39,12 @@ public class AppTest {
         userOneActivity.activate();
         userOneActivity.deactivate();
     }
+
+    @Test
+    public void dataMapperText() {
+
+        final User usrOne = DataControl.getInstance().getUser("Olga");
+        System.out.println(usrOne.getName());
+    }
+
 }
