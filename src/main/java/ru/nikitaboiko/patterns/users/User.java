@@ -6,6 +6,7 @@ import java.util.UUID;
 
 public class User implements PersonModel {
     private String name;
+    private String email;
     private String id;
     private Boolean active;
 
@@ -18,6 +19,12 @@ public class User implements PersonModel {
     public User(String name, String id) {
         this.name = name;
         this.id = id;
+    }
+
+    public User(String name, String email, String id) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
     }
 
     public String getName() {
